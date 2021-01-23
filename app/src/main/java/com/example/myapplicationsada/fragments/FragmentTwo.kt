@@ -51,7 +51,7 @@ class FragmentTwo:Fragment(R.layout.activity_two) {
             val hobby = editTextHobby.text.toString()
             val photo = editTextPhoto.text.toString()
 
-            if(!(name.isEmpty() || lastName.isEmpty() || age.isEmpty() || job.isEmpty() || hobby.isEmpty() )) {
+            if(!(name.isEmpty() || lastName.isEmpty() || age.isEmpty() || job.isEmpty() || hobby.isEmpty() || photo.isEmpty() )) {
                 val editor = sharedPreferences.edit()
                 editor.putString("name", name)
                 editor.putString("lastName", lastName)
@@ -70,6 +70,7 @@ class FragmentTwo:Fragment(R.layout.activity_two) {
                 val intent = Intent(getActivity(), MainActivity::class.java)
                 getActivity()?.startActivity(intent)
             }
+
             else{
                 Toast.makeText(requireContext(), "Data is Missing !!! ", Toast.LENGTH_SHORT)
                     .show()
